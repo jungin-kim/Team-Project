@@ -6,3 +6,4 @@ Machine.add(me.dir() + "Low1.ck");
 Machine.add(me.dir() + "Low2.ck");
 Machine.add(me.dir() + "High2.ck");
 11.5::second => now;
+Machine.add(me.dir() + "High3.ck");
