@@ -8,7 +8,7 @@ if(!mout.open(port)){
 
 //Note length
 BPM bpm;
-bpm.tempo(155);
+bpm.tempo(130);
 bpm.quarterNote => dur qn;
 bpm.eighthNote => dur en;
 bpm.sixteenthNote => dur sn;
@@ -18,25 +18,22 @@ hn*2 => dur wn;
 
 //Notes
 [
--1, -1, -1, -1, -1, 76, -1, -1, 86, -1, -1, -1
+86, 86, 81, 81, 86, 81, 79, 78, 79, 74, 73, 74, -1, 69, 74,
+-1, 69, 74, 76, 78, 79, 78, 77, 76, 74
 ] @=> int H1[];
 
 [
--1, 77, 79, 81, 79, 79, 81, -1, 83, 83, 82, 81
+74, 74, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+-1, -1, -1, -1, -1, -1, -1, -1, -1, -1
 ] @=> int H2[];
 
 [
--1, -1, -1, -1, -1, 84, -1, -1, 74, -1, -1, -1
-] @=> int H3[];
-
-
-[
-qn, qn, qn, qn, qn, hn, en, sn/4, wn, sn, en, hn
-
+en*1.5, qn, qn, qn, qn, qn, en, sn, hn, en, sn, qn, en*1.5, en*1.5, hn,
+sn, sn, qn*1.5, qn*1.5, en*1.5, hn, sn, sn, sn, sn
 ] @=> dur H1D[];
 
 Player p;
 
 spork ~ p.play(mout,msg,H1,H1D);
 spork ~ p.play(mout,msg,H2,H1D);
-5.75::second => now;
+10::second => now;
