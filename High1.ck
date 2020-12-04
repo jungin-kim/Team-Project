@@ -8,7 +8,7 @@ if(!mout.open(port)){
 
 //Note length
 BPM bpm;
-bpm.tempo(135);
+bpm.tempo(138);
 bpm.quarterNote => dur qn;
 bpm.eighthNote => dur en;
 bpm.sixteenthNote => dur sn;

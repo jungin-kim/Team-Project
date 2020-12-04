@@ -15,7 +15,6 @@ bpm.sixteenthNote => dur sn;
 qn*2 => dur hn;
 hn*2 => dur wn;
 
-
 //Notes
 [
 -1, -1, -1, -1, -1, 76, -1, -1, 86, -1, -1, -1
@@ -31,8 +30,7 @@ hn*2 => dur wn;
 
 
 [
-qn, qn, qn, qn, qn, hn, en, sn/4, wn, sn, en, hn
-
+en*1.5, qn, qn, qn, qn, hn, en, sn/4, wn*1.125, sn, en, hn
 ] @=> dur H1D[];
 
 Player p;
