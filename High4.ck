@@ -28,7 +28,7 @@ hn*2 => dur wn;
 ] @=> int H2[];
 
 [
-en, en*1.5, qn, en, qn, qn, qn, en, sn, hn*1.25, en, sn, qn, en*1.5, en*1.25, hn,
+en, en*1.5, qn, en, qn, qn, qn, en, sn, hn*1.125, en, sn, qn, en*1.5, en*1.25, hn,
 en, sn, qn*1.25, qn*1.25, en*1.5, hn*1.25, sn, sn, sn, sn
 ] @=> dur H1D[];
 
@@ -36,4 +36,4 @@ Player p;
 
 spork ~ p.play(mout,msg,H1,H1D);
 spork ~ p.play(mout,msg,H2,H1D);
-11::second => now;
+12::second => now;
