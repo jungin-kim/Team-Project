@@ -8,32 +8,53 @@ if(!mout.open(port)){
 
 //Note length
 BPM bpm;
-bpm.tempo(128);
+bpm.tempo(75);
 bpm.quarterNote => dur qn;
 bpm.eighthNote => dur en;
 bpm.sixteenthNote => dur sn;
 qn*2 => dur hn;
-hn*2 => dur wn;
 
 
 //Notes
 [
--1, 86, 86, 81, 81, 74, 81, 79, 78, 79, 74, 73, 74, -1, 69, 74,
--1, 69, 74, 76, 78, 79, 78, 77, 76, 74
-] @=> int H1[];
+-1, -1, -1,          93,     91,     -1,     84,
+86,         -1           -1,         -1,     -1,
+-1, -1, -1,              -1,     -1,     -1,
+74,         74,      -1, 74,     74,     73,
+74,         76,      78, 78, 76, 76, 74, 74, 73,
+74,         -1,          81,         79,     78
+] @=> int H1[]; 
 
 [
--1, 74, 74, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
--1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+89, 88, 86,          86,     -1,     -1,     79,
+81,         69,          81,         79,     78,
+76, 74, 74,              -1,     74,     73, 
+69,         69,      69, 69,     69,     66,
+67,         71,      71, 73, -1, -1, -1, -1, -1,
+69,         69,          69,         67,     66
 ] @=> int H2[];
 
 [
-en, en*1.5, qn, en, qn, qn, qn, en, sn, hn*1.125, en, sn, qn, en*1.5, en*1.25, hn,
-en, sn, qn*1.25, qn*1.25, en*1.5, hn*1.25, sn, sn, sn, sn
+82, -1, 82,          82,     84,     86,     76,
+74,         62,          69,         67,     66,
+64, 67, 67,              -1,     69,     69,
+62,         62,      62, 66,     66,     61,
+62,         67,      67, 69, 69, 69, 69, 69, 69,
+62,         62,          -1,         -1,     -1
+] @=> int H3[];
+
+[
+sn, sn, en*1.5,      sn,     en,     en,     en,
+en*1.5,     en*1.5,      en*1.5,     en,     sn,
+sn, sn, en*2,              en,     en,     en,
+en*1.5,     en,     sn,     en,     en,     en,
+en*1.5,     en,     sn, sn, sn, sn, sn, sn, sn,
+en*1.5,     en*1.5,      en*1.5,     en,     sn
 ] @=> dur H1D[];
 
 Player p;
 
 spork ~ p.play(mout,msg,H1,H1D);
 spork ~ p.play(mout,msg,H2,H1D);
-12::second => now;
+spork ~ p.play(mout,msg,H3,H1D);
+19.2::second => now;
